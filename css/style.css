@@ -1,0 +1,744 @@
+/*  global rules */
+* {
+  font-family: Exo, sans-serif;
+  color: var(--primary-font-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+/* colors */
+:root {
+  --primary-color: #8e51ff;
+  --background-color-white: #fff;
+  --background-color-section: #f7f5ff;
+  --background-color-footer: #101828;
+  --primary-font-color: #333;
+  --secondary-font-color: #fff;
+  --primary-border-color: #d8dbe1;
+  --red-background-color: #ffe2e2;
+  --red-font-color: #e81c0b;
+  --green-font-color: #00c950;
+  --stars-color: #fdc700;
+  --disabled-color: #d1d5dc;
+
+  /* header */
+  --nav-color: #f5f3ff;
+  --nav-links-color: #7f22fe;
+  --header-border-color: #d4bdff;
+
+  /* home */
+  --header-h1-color: #8e51ff;
+  --header-span-color: #a684ff;
+
+  /* specifications */
+  --specifications-column-color: #ede9fe;
+
+  /* Rating & Reviews */
+  --Reviews-Rating-color: #f0b100;
+  --Reviews-Verified-color: #ede9fe;
+
+  /* Related Products */
+  --Products-item-green: #00bba7;
+  --Products-item-light-green: #00c950;
+  --Products-item-light-blue: #00b8db;
+  --Products-item-orange: #ff6900;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+section {
+  padding-block: 100px;
+}
+
+td,
+th {
+  padding: 32px 16px;
+  border-bottom: 1px solid var(--primary-border-color);
+}
+
+.border-none {
+  border-bottom: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.red {
+  color: var(--red-font-color);
+}
+
+.f20-600 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.f18-700 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.f16-600 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* title */
+.container .title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.container .title span {
+  color: var(--primary-color);
+}
+.container .title p {
+  font-size: 20px;
+}
+.Specifications,
+.Related-Products {
+  background-color: var(--background-color-section);
+}
+
+/* btn */
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 100px;
+  padding: 16px 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 24px;
+  cursor: pointer;
+}
+.solid {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  color: var(--secondary-font-color);
+}
+.border {
+  background-color: var(--background-color-white);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+.solid:hover {
+  color: var(--primary-color);
+  background-color: var(--background-color-white);
+}
+.border:hover {
+  color: var(--secondary-font-color);
+  background-color: var(--primary-color);
+}
+/* --------------------------------------------- */
+
+/* ----------------------header----------------------- */
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: var(--nav-color);
+  border: 1px solid var(--header-border-color);
+}
+header .container {
+  padding: 20px 0;
+}
+/* logo */
+header .container .logo {
+  float: left;
+}
+header .container .logo .image {
+  background-color: var(--primary-color);
+  display: flex; /* For image alignment only */
+  padding: 8px;
+  border-radius: 8px;
+  width: 40px;
+  margin-right: 8px;
+  float: left;
+}
+header .container .logo span {
+  font-size: 24px;
+  font-weight: 700;
+  float: right;
+}
+/* navbar */
+header .container nav {
+  float: right;
+}
+header .container nav .links ul li {
+  position: relative;
+  margin-left: 32px;
+  padding-bottom: 4px;
+  overflow: hidden;
+  float: left;
+}
+header .container nav .links ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border: 1px solid var(--primary-color);
+  width: 100%;
+  right: 100%;
+  transition: 0.3s ease-in-out;
+}
+header .container nav .links ul li:hover::after {
+  right: 0;
+}
+header .container nav .links ul li:hover a {
+  color: var(--nav-links-color);
+}
+header .container nav .links ul li a {
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+/* ------------------home section------------------ */
+.home {
+  padding-top: 150px;
+}
+.home .container .image {
+  position: relative;
+  float: left;
+}
+.home .container .image div {
+  display: flex; /* For image alignment only */
+  justify-content: center;
+  padding: 16px;
+  border-radius: 32px;
+  border: 1px solid var(--primary-border-color);
+}
+.home .container .image span {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+}
+.home .container .image img {
+  border-radius: 16px;
+}
+.home .container .content,
+.home .container .image {
+  width: 48%;
+}
+.home .container .content {
+  float: right;
+}
+
+/* product-span */
+.home .container .content .product-span {
+  margin-bottom: 16px;
+}
+.home .container .content .product-span span,
+.home .container .image span {
+  background-color: var(--header-span-color);
+  padding: 6px 12px;
+  border-radius: 16px;
+  color: var(--secondary-font-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+.home .container .content .product-span span:nth-child(2) {
+  margin: 0 8px;
+}
+.home .container .content h1 {
+  margin-bottom: 16px;
+}
+.home .container .content h1 span {
+  color: var(--primary-color);
+}
+.home .container .content p {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* Pricing */
+.home .container .content .pricing {
+  margin-bottom: 16px;
+}
+.home .container .content .pricing span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.home .container .content .pricing span:nth-child(1) {
+  font-size: 36px;
+  font-weight: 700;
+}
+.home .container .content .pricing span:nth-child(2) {
+  text-decoration-line: line-through;
+  font-size: 24px;
+  margin: 0 16px;
+}
+.home .container .content .pricing span:nth-child(3) {
+  background-color: var(--red-background-color);
+  padding: 4px 8px;
+  border-radius: 16px;
+  color: var(--red-font-color);
+  font-weight: 700;
+  font-size: 14px;
+}
+.home .container .content .Pricing-p {
+  font-size: 16px;
+}
+
+/* buttons */
+.home .container .content .home-btn div {
+  position: relative;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  padding-block: 16px;
+  transition: 0.2s ease-in-out;
+}
+.home .container .content .home-btn div:hover {
+  transform: scale(1.02);
+}
+.home .container .content .home-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+}
+.home .container .content .home-btn div:nth-child(1) {
+  background-color: var(--primary-color);
+  color: var(--secondary-font-color);
+  margin-bottom: 16px;
+}
+.home .container .content .home-btn div:nth-child(2) {
+  background-color: var(--background-color-white);
+  border: 2px solid var(--primary-border-color);
+}
+
+/* ------------------Specifications section------------------ */
+.Specifications .container {
+  text-align: center;
+}
+/* table */
+.Specifications .container .table {
+  background-color: var(--background-color-white);
+  border: 2px solid var(--primary-border-color);
+  border-radius: 32px;
+  padding: 32px;
+  margin-bottom: 64px;
+}
+.Specifications .container table {
+  background-color: var(--background-color-white);
+  width: 100%;
+}
+.Specifications .container table th {
+  border-bottom: 2px solid var(--primary-border-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+.Specifications .container table th:nth-child(1),
+.Specifications .container table td:nth-child(1) {
+  text-align: left;
+}
+.Specifications .container table th:nth-child(2) {
+  background-color: var(--specifications-column-color);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  color: var(--primary-color);
+}
+.Specifications .container table td:nth-child(2) {
+  background-color: var(--specifications-column-color);
+}
+.Specifications .container table td:nth-child(2) span {
+  color: var(--secondary-font-color);
+  font-weight: 600;
+  background-color: var(--header-span-color);
+  padding: 6px 12px;
+  border-radius: 16px;
+}
+.Specifications .container table td:nth-child(2) p {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--nav-links-color);
+}
+.Specifications .container table tr:nth-child(10) td:nth-child(2) {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.Specifications .container table th:nth-child(2) span {
+  color: var(--primary-color);
+}
+.Specifications .container table th span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a7282;
+}
+.Specifications .container table tbody i {
+  margin-right: 8px;
+}
+.Specifications .container table tbody img {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+/* Winner */
+.Specifications .container .Winner {
+  background-color: var(--background-color-white);
+  width: 28%;
+  margin: auto;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 16px;
+  padding: 16px 32px;
+}
+.Specifications .container .Winner .text {
+  text-align: left;
+  float: right;
+}
+.Specifications .container .Winner p {
+  color: var(--green-font-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+.Specifications .container .Winner span {
+  color: var(--green-font-color);
+  font-size: 14px;
+}
+.Specifications .container .Winner img {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin-top: 12px;
+}
+
+/* ------------------Reviews section------------------ */
+
+/* Rating */
+
+.Reviews .container .Rating {
+  position: sticky;
+  top: 100px;
+  width: 30%;
+  height: fit-content;
+  border: 2px solid var(--primary-border-color);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+  float: left;
+}
+.Reviews .container .Rating p {
+  font-size: 60px;
+  font-weight: 700;
+}
+.Reviews .container .Rating .stars img {
+  width: 24px;
+}
+.Reviews .container .Rating .Rating-bars {
+  border-bottom: 1px solid var(--primary-border-color);
+  margin: 32px 0 16px;
+  padding-bottom: 16px;
+}
+.Reviews .container .Rating .Rating-bar {
+  position: relative;
+  margin-block: 16px;
+}
+.Reviews .container .Rating .Rating-bar span:nth-child(1) {
+  float: left;
+}
+.Reviews .container .Rating .Rating-bar span:nth-child(2) {
+  float: right;
+}
+.Reviews .container .Rating .Rating-bar span:nth-child(1):before {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 14px;
+  background-color: var(--primary-border-color);
+  border-radius: 16px;
+  left: 24px;
+  top: 4px;
+}
+.Reviews .container .Rating .Rating-bar span:nth-child(1)::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  height: 14px;
+  background-color: var(--Reviews-Rating-color);
+  border-radius: 16px;
+  left: 24px;
+  top: 4px;
+}
+.Reviews .container .Rating .Rating-bar span.w-15::after {
+  width: 10%;
+}
+.Reviews .container .Rating .Rating-bar span.w-5::after {
+  width: 5%;
+}
+.Reviews .container .Rating .Rating-bar span.w-1-5::after {
+  width: 2%;
+}
+.Reviews .container .Rating .Rating-bar span.w--5::after {
+  width: 1%;
+}
+.Reviews .container .Rating .total {
+  display: flex;
+  justify-content: space-around;
+}
+.Reviews .container .Rating .total p {
+  font-size: 24px;
+  font-weight: 600;
+}
+.Reviews .container .Rating .total span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Reviews-cards */
+.Reviews .container .Reviews-cards {
+  width: 65%;
+  float: right;
+}
+.Reviews-cards .card {
+  border: 2px solid var(--primary-border-color);
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 32px;
+}
+.Reviews-cards .card .user-info {
+  float: left;
+  margin-bottom: 16px;
+}
+.Reviews-cards .card .user-info .user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  float: left;
+}
+.Reviews-cards .card .user-info .user-data {
+  margin-left: 16px;
+  float: right;
+}
+.Reviews-cards .card .user-info .user-data p:nth-child(2) {
+  font-size: 16px;
+}
+.Reviews-cards .card .user-info .user-data .stars img {
+  width: 16px;
+  margin-right: 4px;
+}
+.Reviews-cards .card .user-verified {
+  float: right;
+}
+.Reviews-cards .card .user-verified p {
+  font-size: 14px;
+}
+.Reviews-cards .card .user-verified p:nth-child(1) {
+  background-color: var(--Reviews-Verified-color);
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5d0ec0;
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+.Reviews-cards .card p {
+  font-size: 18px;
+}
+
+/* ------------------Related Products section------------------ */
+/* Products cards */
+.Products-cards {
+  margin-bottom: 32px;
+}
+.Products-cards .card {
+  position: relative;
+  border: 2px solid var(--primary-border-color);
+  width: calc((100% / 4) - 24px);
+  height: 480px;
+  padding: 20px;
+  border-radius: 32px;
+  margin-right: 24px;
+  background-color: var(--background-color-white);
+  float: left;
+}
+.Products-cards .card:nth-child(4) {
+  margin-right: 0;
+}
+.Products-cards .card .image {
+  position: relative;
+}
+.Products-cards .card .image div img {
+  border-radius: 12px;
+  transition: 0.2s ease-in-out;
+}
+.Products-cards .card:hover .image div img {
+  transform: scale(1.05);
+}
+.Products-cards .card .image span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-font-color);
+}
+.Products-cards .card:nth-child(1) .image span {
+  background-color: var(--Products-item-green);
+}
+.Products-cards .card:nth-child(2) .image span {
+  background-color: var(--Products-item-light-blue);
+}
+.Products-cards .card:nth-child(3) .image span {
+  background-color: var(--Products-item-light-green);
+}
+.Products-cards .card:nth-child(4) .image span {
+  background-color: var(--Products-item-orange);
+}
+.Products-cards .card .pricing {
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
+}
+.Products-cards .card .pricing span {
+  font-size: 24px;
+  font-weight: 700;
+}
+.Products-cards .card .image,
+.Products-cards .card .text,
+.Products-cards .card .text h3 {
+  margin-bottom: 16px;
+}
+.Products-cards .card button {
+  float: right;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--primary-color);
+  padding: 8px 16px;
+  color: var(--secondary-font-color);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
+/* -------------------footer-------------------- */
+footer{
+  background-color: var(--background-color-footer);
+  padding-block: 50px;
+}
+footer .info,
+footer .Products,
+footer .Support,
+footer .Company{
+  width: calc(25% - 24px);
+  float: left;
+}
+footer .info{
+  margin-right: 64px;
+}
+footer span,
+footer p,
+footer i{
+  color: var(--secondary-font-color);
+}
+footer .logo{
+  margin-bottom: 24px;
+}
+footer .logo .image {
+  background-color: var(--primary-color);
+  display: flex; /* For image alignment only */
+  padding: 8px;
+  border-radius: 8px;
+  width: 40px;
+  margin-right: 8px;
+  float: left;
+}
+footer .logo span {
+  font-size: 24px;
+  font-weight: 700;
+}
+footer .icons{
+  margin-block: 24px;
+  display: flex;
+}
+footer .info .icons span{
+  background-color: #1e2939;
+  padding: 10px;
+  margin-right: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+footer .info .icons span:nth-child(1):hover{
+  background-color: #1877f2;
+}
+footer .info .icons span:nth-child(2):hover{
+  background-color: #1da1f2;
+}
+footer .info .icons span:nth-child(3):hover{
+  background-color: #e4405f;
+}
+footer .info .icons span:nth-child(4):hover{
+  background-color: #ff0000;
+}
+footer .Products span,
+footer .Support span,
+footer .Company span{
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+footer li{
+  color: #6a7282;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+footer li:hover{
+  color: var(--secondary-font-color);
+}
+footer .End-content {
+  border-top: 1px solid #1e2939;
+  padding-top: 24px;
+  margin-top: 24px;
+  vertical-align: middle;
+}
+footer .End-content span{
+  font-size: 14px;
+}
+footer .End-content .icons{
+  float: right;
+}
+footer .End-content .icons div{
+  display: flex;
+  width: 70px;
+  padding: 8px;
+  margin-left: 16px;
+  border-radius: 8px;
+  background-color: var(--background-color-white);
+}
